@@ -24,4 +24,23 @@ Curso de MySQL y MariaDB
   ![](https://i.imgur.com/CnaIP88.png)
 
 - Relaciones en el diagrama físico enlace para su [descarga](https://static.platzi.com/media/public/uploads/diagrama-fisico_c5b5005f-6eb6-44b1-9edf-f6dda8584916.drawio).
-  
+ 
+## Instalación de MariaDB en linux
+  - Página de [MariaDB](https://mariadb.org/). Donde podras encontrar toda la documentación sobre la herramienta.
+
+  ### Instalación mediante el repositorio
+
+  - Instalación para sistema operativo ubuntu 22.04 "jammy", versión de mariadb 10.8 y del mirror GigeNET-Chicago
+  - Comandos dentro de nuestra terminal:
+  ```bash
+  #añadimos el respositorio
+  sudo apt-get install apt-transport-https curl
+  sudo curl -o /etc/apt/trusted.gpg.d/mariadb_release_signing_key.asc 'https://mariadb.org/mariadb_release_signing_key.asc'
+  sudo sh -c "echo 'deb https://mirrors.gigenet.com/mariadb/repo/10.9/ubuntu jammy main' >>/etc/apt/sources.list"
+  #actulizamos nuestro sistema
+  sudo apt-get update
+  #instalamos
+  sudo apt-get install mariadb-server
+  #verificamos la instalación
+  mariadb --version
+  ```
