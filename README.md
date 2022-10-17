@@ -69,3 +69,43 @@ Curso de MySQL y MariaDB
   ```
   - Y listo tenemos mariadb sin la necesidad de instalarlo directamente dentro de nuestra computadora.
   - Tener tambien un archivo **.gitignore** para ignorar toda la data que se esta almacenando dentro de la carpeta ***mariadb_data*** si estan trabajando dentro de un respositorio.
+
+## Archivos SQL: CREATE DATABASE
+  - Crearemos nuestra base de datos que estaremos usando, con las sentencias o con las siguientes palabras:
+  ```bash
+  CREATE DATABASE database_name
+  # ingresamos a nuestra BD
+  use database_name
+  # creación de tablas
+  CREATE TABLE table_name
+  ```
+  - Ejecutamos el comando de crear nuestra base de datos dentro de mi servidor de base de dattos:
+  ```bash
+  # iniciamos sesión -- instalación en el sistema
+  sudo mysql -u root -p
+  # ingresamos todos los datos que requiere para el acceso
+  # -------------------------------------------------------
+  # conexión con docker
+  # verificamos que nuestro contenedor esta corriendo
+  docker-compose ps
+  # ingresamos a la consola nuestro del contenedor
+  docker-compose exec mariadb bash
+  # ejecutamos el comando para ingresar a la base de datos
+  mysql -u root -p
+  # nos pedira los datos que fueron configurados dentro del archivo de docker-compose.yml
+  ```
+
+  - Dentro del servidor de la base de datos si estas usando Docker debes ingresar los mismos datos que fueron configurados previamente en los archivos.
+  - En mi caso mi base de datos tiene el nombre de **my_db**.
+  ```bash
+  # creación DB
+  MariaDB [(none)]> CREATE DATABASE my_db;
+  # ver todas las DB
+  SHOW DATABASES;
+  # eliminar una DB
+  DROP DATABASE database_name;
+  ```
+  - Otra manera de crear un DB es cargando archivos con la extension de **sql** nos vamos a la terminal ingresamos el comando:
+  ```bash
+  mysql < nombre_archivo.sql
+  ```
