@@ -44,3 +44,28 @@ Curso de MySQL y MariaDB
   #verificamos la instalación
   mariadb --version
   ```
+  ### Instalación o uso de Docker
+  - Previamente tener docker instalado en su sistema.
+  - Dentro de nuestra carpeta crear el archivo **docker-compose.yml** donde se encontrara toda la configuración.
+  ```yml
+  version: '3.3'
+  services:
+    mariadb:
+      image: mariadb:latest
+    environment:
+      - MARIADB_DATABASE=my_db
+      - MARIADB_USER=root
+      - MARIADB_PASSWORD=123456
+      - MARIADB_ROOT_USER
+      - MARIADB_ROOT_PASSWORD=123456
+    volumes:
+      - ./mariadb_data:/var/lib/mariadb/data
+    ports:
+      - '3808:3808'
+  ```
+  - Ejecutar dentro de la terminal el siguiente comando, el cual se encargade la creación del contenedor donde se alojara nuestro base de datos en este caso **MariaDB**.
+  ```bash
+  docker-compose up mariadb
+  ```
+  - Y listo tenemos mariadb sin la necesidad de instalarlo directamente dentro de nuestra computadora.
+  - Tener tambien un archivo **.gitignore** para ignorar toda la data que se esta almacenando dentro de la carpeta ***mariadb_data*** si estan trabajando dentro de un respositorio.
