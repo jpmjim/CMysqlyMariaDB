@@ -130,3 +130,13 @@ Curso de MySQL y MariaDB
   ```bash
   mysql -u jpmjim -p 
   ```
+
+## Conexion DBeaver con MariaDB
+  - Página de [DBeaver](https://dbeaver.io/download/) donde encontraras toda la documentación y como poderlo instalar en los diferentes sistemas operativos, en este caso para ubuntu:
+  ```bash
+  # en la terminal
+  sudo snap install dbeaver-ce
+  ```
+  - Conexión con los datos ya establecidos dentro del servidor de la base de datos.
+    ![Imgur](https://i.imgur.com/crFSxja.png)
+    ![Imgur](https://i.imgur.com/NvozSSH.png)
