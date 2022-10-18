@@ -109,3 +109,24 @@ Curso de MySQL y MariaDB
   ```bash
   mysql < nombre_archivo.sql
   ```
+
+## Manejo de usuarios para la base de datos
+  No es bueno de estar usando al usuario root, es mejor tener propios usuarios y darle los permisos necesarios para el desarrollo de su base de datos. Veremos como crear nuestro usuario usando el comando de [**GRANT**](https://mariadb.com/kb/en/grant/#grant-option) para la asignación de permisos al usuario.
+
+  - Ingresamos con el usuario **root** ya dentro del servidor de DB:
+  ```bash
+  # crear
+  CREATE USER 'name_user'@'localhost' IDENTIFIED BY '******';
+  # eliminar
+  DROP USER 'nombre_usuario'@'localhost';
+  # mostrar los usuarios
+  SELECT user FROM mysql.user;
+  # dar todos los privilegios
+  GRANT ALL PRIVILEGES ON *.* TO 'name_user'@'localhost';
+  FLUSH PRIVILEGES;
+  ```
+
+  - Ahora ingresamos con el usuario creado en este caso **jpmjim**
+  ```bash
+  mysql -u jpmjim -p 
+  ```

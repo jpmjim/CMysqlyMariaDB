@@ -12,4 +12,4 @@ services:
     volumes:
       - ./mariadb_data:/var/lib/mariadb/data
     ports:
-      - '3808:3808'
+      - '3306:3306'
