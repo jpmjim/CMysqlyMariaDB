@@ -140,3 +140,39 @@ Curso de MySQL y MariaDB
   - Conexión con los datos ya establecidos dentro del servidor de la base de datos.
     ![Imgur](https://i.imgur.com/crFSxja.png)
     ![Imgur](https://i.imgur.com/NvozSSH.png)
+
+## CREATE TABLE
+  Creación de tablas dentro de nuestra base de datos, donde estaran incluidas dentro de un archivo llamado **2-create-tables-sql**:
+  ```sql
+  # archivo 2-create-tables.sql
+  -- Base para crear las tablas
+  # creando nuestra tabla de lineas
+  CREATE TABLE `lines` (
+    `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(10) NOT NULL,
+    `color` VARCHAR(15) NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `update_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
+  ) 
+  ```
+  Nos vemos a la terminal para añadir la tabla:
+  ```bash
+  # cuando tienes instalado en su sistema mariadb
+  mysql < 2-create-tables.sql
+  # comando para insertar archivo .sql dentro de un contenedor de docker
+  docker exec -i nombre_contenedor sh -c 'exec mysql -uroot -pcontraseña' < "nombre_archivo.sql"
+  ```
+  Comprobamos la insersicón de la tabla:
+  ```bash
+  # nos movemos al contenedor
+  docker-compose exec nombre_contenedor bash
+  # ingresamos al servidor de base de datos
+  mysql -u root -p
+  # dentro de mariadb seleccionamos la BD
+  use nombre_db
+  # ejecutamos para ver las tablas
+  show tables;
+  # mas detallado la tabla
+  describe `nombre_tabla`;
+  ```
+
