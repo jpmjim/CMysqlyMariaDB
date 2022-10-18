@@ -162,7 +162,7 @@ Curso de MySQL y MariaDB
   # comando para insertar archivo .sql dentro de un contenedor de docker
   docker exec -i nombre_contenedor sh -c 'exec mysql -uroot -pcontraseña' < "nombre_archivo.sql"
   ```
-  Comprobamos la insersicón de la tabla:
+  Comprobamos la inserción de la tabla:
   ```bash
   # nos movemos al contenedor
   docker-compose exec nombre_contenedor bash
@@ -175,4 +175,42 @@ Curso de MySQL y MariaDB
   # mas detallado la tabla
   describe `nombre_tabla`;
   ```
+## Tren, Estación
+  Debemos crear las dos tablas que  nos faltan que son para **trenes** y las **estaciones** por lo cual usaremos un archivo para su inserción dentro del servidor de base datos que estemos usando en mi caso dentro de un contanedor de docker.
+  
+  Creamos nuestro archivo de nombre **train-station.sql**:
+  ```bash
+  -- Creación de la tabla de trains
+  CREATE TABLE `trains` (
+    `serial_number` VARCHAR(10) NOT NULL,
+    `line_id` BIGINT(20) UNSIGNED NOT NULL,
+    `type` TINYINT(4) NOT NULL,
+    `year` INT(4) NOT NULL,
 
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (serial_number),
+    CONSTRAINT `trains_line_id_foreign` 
+    FOREIGN KEY (`line_id`) REFERENCES `lines` (`id`)
+  ) 
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+
+  -- Creación de la tabla de stations
+  CREATE TABLE `stations` (
+    `id` BIGINT(20),
+
+    `name` VARCHAR(50) NOT NULL,
+    -- `icon` VARCHAR(100) NOT NULL,
+
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  ) 
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+  ```
+  Comando dentro de la terminal:
+  ```bash
+  docker exec -i nombre_contenedor sh -c 'exec mysql -uroot -pcontraseña name_database' < "archivo.sql"
+  ```
