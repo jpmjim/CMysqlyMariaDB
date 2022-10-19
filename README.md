@@ -251,3 +251,13 @@ Curso de MySQL y MariaDB
   Tendremos por cada uno de nuestras tablas un archivo especifico como: insert-lines.sql, insert-trains.sql y insert-stations.sql donde cada uno de ellas contendran todo la información que llevara nuestra base de datos.
 
   [INSERT](https://mariadb.com/kb/en/insert/)
+
+## Actualizando información: UPDATE
+  Teniendo los resgistros dentro de nuestra base de datos, dentro de ellos hay algunos error las cuales podemos corregir con la sentencia de **UPDATE** para actulizar informaciones de un registro que este guardado dentro de la DB:
+  ```bash
+  # sentencia
+  UPDATE `name_table`
+  SET column_name = `New value`
+  WHERE column_condition = "value_condition";
+  ```
+  Como ejemplo tomaremos nuestra tabla de **stations** donde actualizaremos algunos campos, trabajando con el archivo de ***07-updating-info.sql***.
