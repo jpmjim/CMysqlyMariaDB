@@ -261,3 +261,22 @@ Curso de MySQL y MariaDB
   WHERE column_condition = "value_condition";
   ```
   Como ejemplo tomaremos nuestra tabla de **stations** donde actualizaremos algunos campos, trabajando con el archivo de ***07-updating-info.sql***.
+
+## Borrando datos: DELETE
+  Para poder borrar registro de información dentro de nuestra base de datos necesitamos de la sintaxis de [**DELETE**](https://mariadb.com/kb/en/delete/) el cual puede ser muy peligroso si no se especifica de donde queremos eliminar dicha información.
+
+  Debes poner una condición que filtre unicamente los datos que se quieren eliminar sin olvidarse del **WHERE**, a no de ser que queramos eliminar una tabla completa donde se eliminaran todos los registros quedando completamente vacia.
+
+  Otra sintaxis que nos permite borrar tambien datos es [**TRUNCATE TABLE**](https://mariadb.com/kb/en/truncate-table/) dejara la tabla vacia pero va reiniciar los ***ids***.
+
+  ***DELETE FROM WHERE***
+  ```bash
+  DELETE FROM `table_name`
+  WHERE colum_condition = "value_condition";
+  ```
+  Para obtener el id de una estación en particular de la BD con el siguiente comando:
+  ```bash
+  # la cual sera eliminada de la tabla
+  SELECT id FROM stations WHERE name = "Merced";
+  # las sentencias en nuestro archivo de 8-delete-record-sql
+  ```
