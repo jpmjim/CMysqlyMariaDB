@@ -214,3 +214,10 @@ Curso de MySQL y MariaDB
   ```bash
   docker exec -i nombre_contenedor sh -c 'exec mysql -uroot -pcontraseña name_database' < "archivo.sql"
   ```
+## Modificando tablas con ALTER TABLE
+  Para poder modificar al un error que se puedo haber cometido dentro de alguna tabla como un tipo de dato con la sentencia de **AFTER TABLER**, señalando dentro de que base de datos, la tabla el cual se realizaran los cambios.
+
+  Podemos modificar como el tipo de dato despues de la columna, podemos añadir una llave primaria si es necesario.
+
+  Los cambios a realizar es a la tabla de ***stations***.
+
