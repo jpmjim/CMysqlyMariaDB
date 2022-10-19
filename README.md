@@ -244,3 +244,10 @@ Curso de MySQL y MariaDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;
   ```
+
+## Insertando información en la base de datos
+  Para poder insertar de información debemos usar la sentencia de **INSERT INTO** detallando a la tabla que vamos a llenar de datos, especificar las columnas que queremos llenar y al final lista de los valores.
+
+  Tendremos por cada uno de nuestras tablas un archivo especifico como: insert-lines.sql, insert-trains.sql y insert-stations.sql donde cada uno de ellas contendran todo la información que llevara nuestra base de datos.
+
+  [INSERT](https://mariadb.com/kb/en/insert/)
