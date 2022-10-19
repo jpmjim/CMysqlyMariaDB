@@ -220,4 +220,27 @@ Curso de MySQL y MariaDB
   Podemos modificar como el tipo de dato despues de la columna, podemos añadir una llave primaria si es necesario.
 
   Los cambios a realizar es a la tabla de ***stations***.
+  ```bash
+  # le decimos la base datos que queremos usar
+  use my;
+  # los cambios a la tabla
+  ALTER TABLE `stations`
+  MODIFY `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  ADD PRIMARY KEY(id);
+  ```
 
+  [ALTER TABLE](https://mariadb.com/kb/en/alter-table/)
+
+  Creación de la tabla ***stations_delete***:
+  ```bash
+  CREATE TABLE `stations_delete` (
+    `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    -- `icon` VARCHAR(100) NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+  ) 
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+  ```
