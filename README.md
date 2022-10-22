@@ -280,3 +280,48 @@ Curso de MySQL y MariaDB
   SELECT id FROM stations WHERE name = "Merced";
   # las sentencias en nuestro archivo de 8-delete-record-sql
   ```
+  Ejemplo de TRUNCATE TABLE con nuestra tabla de ***stations_delete*** dentro de la tabla ingresamos el conjunto de datos que se encontraran dentro del arcivo de **9-insert-fake-stations.sql** el cual contiene l alista de las estaciones de tren, dichos datos insertamos a la tabla mediante la terminal con el comando que antes ya fue visto.
+
+  Dentro de de nuestra base datos verificamos que se ingreso l ainformación correctamente con:
+  ```bash
+  # lista de las tablas
+  show tables;
+  # detalles de la tabla
+  describe stations_delete;
+  # datos dentro de la tabla
+  select * from stations_delete;
+  # ahora borramos todo la data que se encuentra en la tabla quedando vacia 
+  DELETE FROM stations_delete;
+  ```
+  Ingresamos nuevamente datos a la tabla donde al usar DELETE este no restablece los ids:
+  ```bash
+  INSERT INTO stations_delete (name) VALUES
+  ("Lázaro Cárdens"),
+  ("Ferería"),
+  ("Pnttlán"),
+  ("Tauga"),
+  ("MartínCrrera");
+  ```
+  Al ejecutar el comando de **select * from stations_delete**, podemos notar que toma nuevos ids con la secuencia donde se habia quedado anteriormente al vaciar la tabla auto incrmentandose: 
+  ![Imgur](https://i.imgur.com/ssXjfbe.png)
+
+  Reiniciando el id con **TRUNCATE** dentro de la consola:
+  ```bash
+  # nuevamente vaciamos la tabla
+  delete from stations_delete;
+  # usamos truncate en la tabla
+  TRUNCATE TABLE stations_delete;
+  # ingresamos los datos
+  INSERT INTO stations_delete (name) VALUES
+  ("Lázaro Cárdens"),
+  ("Ferería"),
+  ("Pnttlán"),
+  ("Tauga"),
+  ("MartínCrrera"); 
+  ```
+  Y llamamos a la tabla y veremos que el id se reinicio:
+  ![Imgur](https://i.imgur.com/Sg9WePX.png)
+
+  Para eliminar una tabla usamos el comando de **DROP TABLE nombre_table**
+
+
