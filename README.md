@@ -324,4 +324,28 @@ Curso de MySQL y MariaDB
 
   Para eliminar una tabla usamos el comando de **DROP TABLE nombre_table**
 
+## Listando datos: SELECT
+  Estructura bÃ¡sica de un **[SELECT](https://mariadb.com/kb/en/select/)**:
+  ![Imgur](https://i.imgur.com/vMjCNje.png)
 
+  Usando select en la terminal:
+  ```bash
+  # para seleccionar todo
+  SELECT * FROM name_table;
+  # filtar por columnas en este caso usamos la tabla de lines
+  SELECT id, name, color FROM name_table;
+  # operaciones matematicas
+  SELECT (2 + 2);
+  # renombrando el tÃ­tulo€ý,€ý,
+  SELECT (2 + 2) AS Resultado;
+  # promedio de aÃ±os con la tabla de trains
+  SELECT AVG(year) FROM trains;
+  SELECT AVG(year) AS year_avg FROM trains;
+  # juntar tablas
+  SELECT
+  `lines`.`name`,
+  `trains`.`serial_number`
+  FROM `lines`
+  INNER JOIN `trains`
+  ON `lines`.`id` = `trains`.`line_id`;
+  ```
