@@ -349,3 +349,12 @@ Curso de MySQL y MariaDB
   INNER JOIN `trains`
   ON `lines`.`id` = `trains`.`line_id`;
   ```
+
+## ¿Qué son las consultas anidadas?
+  Una consulta anidada es una consulta SQL normal pero por dentro existe una subconsulta para obtener un dato, para traernos información de una tabla a otra.
+  Ejemplo:
+  ![Imgur](https://i.imgur.com/HkMWM0i.png)
+  ![Imgur](https://i.imgur.com/tWOaa2R.png)
+  En este tipo de consultas tu consulta anidada debe devolver únicamente un solo registro y una única columna.
+  - [Row Subqueries](https://mariadb.com/kb/en/subqueries-row-subqueries/)
+  - [Scalar Subqueries](https://mariadb.com/kb/en/subqueries-scalar-subqueries/)
