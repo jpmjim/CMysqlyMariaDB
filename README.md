@@ -382,3 +382,10 @@ Curso de MySQL y MariaDB
 
   ![](https://static.platzi.com/media/user_upload/Haversine-c3b6677b-d6dc-417f-8c00-965a5139f333.jpg)
   Y la otra forma usando el teorema de pitagoras que es aun mucho mas preciso.
+
+## Creando nuestras consultas de geolocalización
+  Creamos nuestra tabla llamada **12-create-geo-table.sql** y para poder insertar información la tabla **13-insert-into-geo-table.sql** el cual contendra las cordenadas de cada estación.
+
+  Ahora crearemos nuestra tabla para medir la distancia que se llamara **14-geo-select.sql**, donde se encontraran los comandos que podemos usar desde un archivo o desde la terminal:
+  
+  ![Imgur](https://i.imgur.com/N00F4LH.png)
