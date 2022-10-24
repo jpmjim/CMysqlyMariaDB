@@ -364,3 +364,21 @@ Curso de MySQL y MariaDB
 
   Despues de crear nuestra tabla dentro de la base de datos procedemos a llenarla con el nuevo archivo de ***11-insert-line-stations-nested.sql*** el cual contiene los datos que se relacionan entre las tablas de **lines y stations**.
 
+## ¿Cómo funciona la geolocalización?
+  Podemos calcular distancias usando **MSQL** entre dos puntos distintos usando ***Spatial Functions*** las ultimas versiones de MySQL y MariaDB proveen de una serie de funciones que permiten  hacer cálculos de geolocalización, que nos permiten hacer como:
+
+  - Medir distancias
+  - Encontrar si un punto está dentro de un área
+  - Guardar polígonos
+
+  Para nedir la distancia necesitaremos de un tipo de dato especial llamado [**POINT**](https://mariadb.com/kb/en/point/) de esta forma podremos usar las funciones para calcular la distancia.
+
+  Dentro de MariaDB las encontramos como [Geographic Functions](https://mariadb.com/kb/en/geographic-functions/).
+
+  [Tutorial: cómo calcular distancias geográficas usando MySQL](https://platzi.com/blog/calcula-distancias-con-mysql/)
+
+  ### La formula de Haversine
+  Es muy precisa y para calcularla necesita latitud y longitud de los dos puntos a medir. se usa mucho en astronomia.
+
+  ![](https://static.platzi.com/media/user_upload/Haversine-c3b6677b-d6dc-417f-8c00-965a5139f333.jpg)
+  Y la otra forma usando el teorema de pitagoras que es aun mucho mas preciso.
