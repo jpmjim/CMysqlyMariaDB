@@ -336,7 +336,7 @@ Curso de MySQL y MariaDB
   SELECT id, name, color FROM name_table;
   # operaciones matematicas
   SELECT (2 + 2);
-  # renombrando el tÃ­tulo€ý,€ý,
+  # renombrando el tÃ­tuloï¿½ï¿½,ï¿½ï¿½,
   SELECT (2 + 2) AS Resultado;
   # promedio de aÃ±os con la tabla de trains
   SELECT AVG(year) FROM trains;
@@ -358,3 +358,9 @@ Curso de MySQL y MariaDB
   En este tipo de consultas tu consulta anidada debe devolver Ãºnicamente un solo registro y una Ãºnica columna.
   - [Row Subqueries](https://mariadb.com/kb/en/subqueries-row-subqueries/)
   - [Scalar Subqueries](https://mariadb.com/kb/en/subqueries-scalar-subqueries/)
+
+## Creando nuestra primera consulta anidada
+  Creamos nuestra tabla de **lines_stations** para el desarrollo de la relaciï¿½n que establecimos al inicio. 
+
+  Despues de crear nuestra tabla dentro de la base de datos procedemos a llenarla con el nuevo archivo de ***11-insert-line-stations-nested.sql*** el cual contiene los datos que se relacionan entre las tablas de **lines y stations**.
+
