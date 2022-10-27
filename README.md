@@ -389,3 +389,26 @@ Curso de MySQL y MariaDB
   Ahora crearemos nuestra tabla para medir la distancia que se llamara **14-geo-select.sql**, donde se encontraran los comandos que podemos usar desde un archivo o desde la terminal:
   
   ![Imgur](https://i.imgur.com/N00F4LH.png)
+
+## GeolocalizaciÃ³n con consultas anidadas
+  Calculamos en kilometros con consultas anidadas ejecutando desde la terminal:€ý,€ý,
+  ```sql
+  SELECT
+  ST_Distance_Sphere(
+    (
+      SELECT `locations`.`location`
+      FROM `locations`
+      INNER JOIN `stations`
+      ON `stations`.`id` = `locations`.`station_id`
+      WHERE `stations`.`name` = "Balderas"
+    ),
+    (
+      SELECT `locations`.`location`
+      FROM `locations`
+      INNER JOIN `stations`
+      ON `stations`.`id` = `locations`.`station_id`
+      WHERE `stations`.`name` = "Pino Suarez"
+    )
+  ) / 1000 AS distance;
+  ```
+  ![Imgur](https://i.imgur.com/GAo8qB7.png)
