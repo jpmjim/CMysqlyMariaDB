@@ -391,7 +391,7 @@ Curso de MySQL y MariaDB
   ![Imgur](https://i.imgur.com/N00F4LH.png)
 
 ## GeolocalizaciÃ³n con consultas anidadas
-  Calculamos en kilometros con consultas anidadas ejecutando desde la terminal:€ý,€ý,
+  Calculamos en kilometros con consultas anidadas ejecutando desde la terminal:ï¿½ï¿½,ï¿½ï¿½,
   ```sql
   SELECT
   ST_Distance_Sphere(
@@ -413,14 +413,26 @@ Curso de MySQL y MariaDB
   ```
   ![Imgur](https://i.imgur.com/GAo8qB7.png)
 
-## ¿Qué son los Stored Procedures?
+## ï¿½Quï¿½ son los Stored Procedures?
   - Los [Stored Procedures](https://mariadb.com/kb/en/stored-procedures/) o "Procedimientos almacenados" son funciones del lado de la base de datos. 
   - Son funciones que quedan guardadas en el gestor de base de datos y se pueden invocar.
-  - Sirve para reutilizar código pero más importante nos permite crear consultas frecuentes, Son usualmente llamados rutinas.
+  - Sirve para reutilizar cï¿½digo pero mï¿½s importante nos permite crear consultas frecuentes, Son usualmente llamados rutinas.
 
   ![Imgur](https://i.imgur.com/MGZVBEf.png)
 
   - **Prepared Statements**:
-    En un procedimiento almacenado también podemos tener consultas preparadas. Esto nos permite tener una cadena de texto con código SQL que podremos ejecutar.
+    En un procedimiento almacenado tambiï¿½n podemos tener consultas preparadas. Esto nos permite tener una cadena de texto con cï¿½digo SQL que podremos ejecutar.
   
-  - ¿Debería aplicar esta lógica desde un lenguaje mejor?: Depende de tu equipo en la organización y de quién quiera tener el control de las consultas. 
+  - ï¿½Deberï¿½a aplicar esta lï¿½gica desde un lenguaje mejor?: Depende de tu equipo en la organizaciï¿½n y de quiï¿½n quiera tener el control de las consultas.
+
+## Crea tus primeras Stored Procedures
+  Crearemos nuestros primeros procedimientos reservados, dentro de nuestro archivo **15-stored-procedures.sql**.
+  - [CREATE PROCEDURE](https://mariadb.com/kb/en/create-procedure/)
+  - [SELECT INTO](https://mariadb.com/kb/en/selectinto/)
+  - Para poder eliminar un procedimiento reservado con el siguiente comando *DROP PROCEDURE name_procedure;**.
+  - Para llamar al procedimiento con el comando **CALL name_procedure(values);**. 
+  - Como ejemplo usaremos las dos primeras cordenadas, dentro de la imagen tenemos lo que es nuestro **procedimiento reservado**, **las cordenadas** y la **el llamado del procemiento con los valores que solicita**:
+   
+  - Calculando en Kilometros, si cambios el valor de **false** por la de **true** nos devolvera la medida en metros:
+
+    ![Imgur](https://i.imgur.com/YU1oov9.png)
