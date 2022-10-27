@@ -412,3 +412,15 @@ Curso de MySQL y MariaDB
   ) / 1000 AS distance;
   ```
   ![Imgur](https://i.imgur.com/GAo8qB7.png)
+
+## ¿Qué son los Stored Procedures?
+  - Los [Stored Procedures](https://mariadb.com/kb/en/stored-procedures/) o "Procedimientos almacenados" son funciones del lado de la base de datos. 
+  - Son funciones que quedan guardadas en el gestor de base de datos y se pueden invocar.
+  - Sirve para reutilizar código pero más importante nos permite crear consultas frecuentes, Son usualmente llamados rutinas.
+
+  ![Imgur](https://i.imgur.com/MGZVBEf.png)
+
+  - **Prepared Statements**:
+    En un procedimiento almacenado también podemos tener consultas preparadas. Esto nos permite tener una cadena de texto con código SQL que podremos ejecutar.
+  
+  - ¿Debería aplicar esta lógica desde un lenguaje mejor?: Depende de tu equipo en la organización y de quién quiera tener el control de las consultas. 
