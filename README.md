@@ -444,3 +444,15 @@ Curso de MySQL y MariaDB
     CALL get_line_stations("Linea 9");
     ```
   ![Imgur](https://i.imgur.com/MC8o9z6.png)
+
+## ¿Qué son los triggers?
+  Los [triggers](https://mariadb.com/kb/en/triggers/) son eventos que ocurren en nuestra base de datos. Podemos escuchar ciertos eventos y hacer acciones cada vez que sucedan. Son similares a las Stored Procedures, con la diferencia de que estas se ejecutan cada vez que algún evento sucede.
+
+  **NEW y OLD**
+  Al ser eventos, podemos acceder a los datos nuevos que estamos insertados e incluso a los datos viejos antes de que los nuevos los sutituyan.
+
+  Un trigger también conocido como disparador, es una especie de script en lenguaje de programación SQL, MySQL o PostgreSQL para base de datos.
+
+  Consiste en una serie de procedimientos que se ejecutan, según instrucciones definidas, cuando se lleven a cabo determinadas operaciones, sobre la información que contiene una base de datos.
+
+  Generalmente, un trigger se acciona cuando se ejecutan acciones para insertar, borrar o modificar los datos de una tabla.
