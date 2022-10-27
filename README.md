@@ -436,3 +436,11 @@ Curso de MySQL y MariaDB
   - Calculando en Kilometros, si cambios el valor de **false** por la de **true** nos devolvera la medida en metros:
 
     ![Imgur](https://i.imgur.com/YU1oov9.png)
+
+## Prepared statements
+  - Crearemos nuestra **Consulta preparada** dentro de nuestro **Procedimiento Reservada** que se encontrara dentro del archivo ***16-prepared-statements.sql***.
+  - Nos vamos a la terminal y llamamos al procedimiento que creamos el cual nos devolvera **que estaciones tiene determinada linea del metro:
+    ```bash
+    CALL get_line_stations("Linea 9");
+    ```
+  ![Imgur](https://i.imgur.com/MC8o9z6.png)
