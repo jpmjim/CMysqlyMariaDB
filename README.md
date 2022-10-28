@@ -507,3 +507,10 @@ Curso de MySQL y MariaDB
   - Creamos nuestro trigger el cual se encargara de ver del estado que se encuentra el conductor al momento de empezar con su labor. Se encontrara en nuestro archivo de **21-driver-trigger.sql**, todos nuestro archivos debemos enviarlos a nuestra base de datos.
 
   ![Imgur](https://i.imgur.com/UpFGCql.png)
+
+## PhpMyAdmin
+  PhpMyAdmin es una herramienta de software libre escrita en PHP , destinado a manejar la administración de MySQL a través de la Web. phpMyAdmin admite una amplia gama de operaciones en MySQL y Maria DB. Operaciones de uso frecuente (gestión de bases de datos, tablas, columnas, relaciones, índices, usuarios, permisos, etc) se puede realizar a través de la interfaz de usuario, mientras aún tiene la capacidad de ejecutar directamente cualquier instrucción SQL.
+
+  - PhpMyAdmin se vuelve obligatorio generalmente cuando usamos un hosting compartido aparte de [phpMyAdmin](https://www.phpmyadmin.net/).
+  - Podemos usar [HeidiSQL](https://www.heidisql.com/) cuando la conexión a la base de datos lo permite, porque es liviano y de una interfaz limpia que agiliza el trabajo con MySQL / MariaDB y tambien Postgres, SQLite, etc.
+  - HeidiSQL es free y open-source, se puede usar en Windows y Linux.
