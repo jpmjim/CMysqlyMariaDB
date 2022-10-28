@@ -479,3 +479,19 @@ Curso de MySQL y MariaDB
 
   ![Imgur](https://i.imgur.com/SKFX0FN.png)
 
+  Podríamos evitar el trigger modificando el campo updated_at de la siguiente forma:
+
+  ```sql
+  ALTER TABLE `lines`
+	CHANGE COLUMN `updated_at` `updated_at` 
+  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+  ON UPDATE CURRENT_TIMESTAMP AFTER `created_at`;
+  ```
+
+  Para la tabla de **stations**.
+  ```sql
+  ALTER TABLE stations
+    MODIFY updateReg TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+  
+  DESCRIBE stations;
+  ```
