@@ -456,3 +456,26 @@ Curso de MySQL y MariaDB
   Consiste en una serie de procedimientos que se ejecutan, según instrucciones definidas, cuando se lleven a cabo determinadas operaciones, sobre la información que contiene una base de datos.
 
   Generalmente, un trigger se acciona cuando se ejecutan acciones para insertar, borrar o modificar los datos de una tabla.
+
+## Crea tus primeros triggers
+  Crearemos nuestro trigger para poder actualizar algún registro cuando se realizen cambios en un campo, utilizaremos el archivo llamado **17-triggers.sql**.
+
+  ```sql
+  USE my_db;
+
+  CREATE TRIGGER update_updated_at_field
+  BEFORE UPDATE
+  ON `lines`
+  FOR EACH ROW
+  SET NEW.updated_at = NOW(); 
+  ```
+
+  Enviamos nuestro archivo de SQL a nuestra base de datos con:
+  ```bash
+  mysql -u root -p < 17-triggers.sql
+  ```
+
+  Actulizaremos nuestra tabla **lines** donde tomaremos los datos que corresponden al ***id 1***, donde cambiaremos el ***name*** de la linea. Y al momento de actulizar la fecha cambio al momento de realizar los cambios.
+
+  ![Imgur](https://i.imgur.com/SKFX0FN.png)
+
