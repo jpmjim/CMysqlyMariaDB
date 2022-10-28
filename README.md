@@ -495,3 +495,15 @@ Curso de MySQL y MariaDB
   
   DESCRIBE stations;
   ```
+
+## Triggers compuestos
+
+  [CREATE TRIGGER](https://mariadb.com/kb/en/create-trigger/)
+
+  - Crearemos nuestra tabla de **18-create-drivers-table.sql** donde se encontraran nuestros conductores, le insertamos datos desde el archivo **20-fill-drivers-table.sql**.
+  
+  - Tomaremos nuestra tabla **19-create-active_drivers.sql** el cúal nos indicara los conductores que esten activos, que cuando algun conductor cambie su estado a **1** debe ser insertado en la tabla y cuando deje de trabajar su estado cambie a **0** eliminando el registro de la tabla.
+
+  - Creamos nuestro trigger el cual se encargara de ver del estado que se encuentra el conductor al momento de empezar con su labor. Se encontrara en nuestro archivo de **21-driver-trigger.sql**, todos nuestro archivos debemos enviarlos a nuestra base de datos.
+
+  ![Imgur](https://i.imgur.com/UpFGCql.png)
