@@ -514,3 +514,45 @@ Curso de MySQL y MariaDB
   - PhpMyAdmin se vuelve obligatorio generalmente cuando usamos un hosting compartido aparte de [phpMyAdmin](https://www.phpmyadmin.net/).
   - Podemos usar [HeidiSQL](https://www.heidisql.com/) cuando la conexión a la base de datos lo permite, porque es liviano y de una interfaz limpia que agiliza el trabajo con MySQL / MariaDB y tambien Postgres, SQLite, etc.
   - HeidiSQL es free y open-source, se puede usar en Windows y Linux.
+
+## phpMyAdmin con Docker
+  Sin la necesidad de estar instalando por completo la interfaz gráfica de phpMyAdmin podemos usarlo con la ayuda de docker, mediante un contenedor con toda las mismas caracteristicas.
+
+  Simplemente con la siguiente configuración de nuestro archivo **docker-compose.yml**.
+
+  ```yml
+  version: '3.3'
+
+  services:
+    mariadb:
+      image: mariadb:latest
+      environment:
+        - MARIADB_DATABASE=my_db
+        - MARIADB_ROOT_PASSWORD=password
+      ports:
+        - 3306:3306
+      volumes:
+        - ./mariadb_data:/var/lib/mariadb/data
+    
+    phpmyadmin:
+      image: phpmyadmin
+      restart: always
+      ports:
+        - 8080:80
+      environment:
+        - PMA_ARBITRARY=1
+      depends_on:
+        - mariadb 
+  ```
+
+  Levantamos nuestros contenedores:
+
+  ```bash
+  docker-compose up -d phpmyadmin
+  docker-compose up -d mariadb
+  ```
+
+  Nos vamos al navegor a la siguiente ruta http://localhost:8080/ y lista tenemos nuestro phpMyAdmin
+
+  ![Imgur](https://i.imgur.com/xHszM0P.png)
+
